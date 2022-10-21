@@ -2,11 +2,11 @@
   <div
     class="grid grid-cols-1 md:grid-cols-8 xl:grid-cols-10 max-w-screen-xl w-full mx-auto p-6 md:p-10"
   >
-    <div class="flex flex-col md:col-span-2 gap-6">
-      <Sidebar :handleTab="handleTab" />
+    <div class="flex flex-wrap md:flex-col md:col-span-2 gap-4 md:gap-6">
+      <Sidebar :handleTab="handleTab" :tab="tab" />
     </div>
     <div
-      class="flex flex-col md:col-span-6 xl:col-span-8 gap-8 pt-8 md:pt-0 md:pl-10 pr-0"
+      class="flex flex-col md:col-span-6 xl:col-span-8 gap-8 pt-6 md:pt-0 md:pl-10 pr-0"
     >
       <div class="flex justify-between">
         <div class="flex flex-col gap-2">

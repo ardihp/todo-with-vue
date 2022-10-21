@@ -1,13 +1,22 @@
 <template>
-  <ButtonSidebar @click="handleTab('Today')">
+  <ButtonSidebar
+    :class="{ ['opacity-100 bg-slate-600 text-white']: tab === 'Today' }"
+    @click="handleTab('Today')"
+  >
     <ViewfinderIcon />
     <p class="mt-1">Today</p>
   </ButtonSidebar>
-  <ButtonSidebar @click="handleTab('Upcoming')">
+  <ButtonSidebar
+    :class="{ ['opacity-100 bg-slate-600 text-white']: tab === 'Upcoming' }"
+    @click="handleTab('Upcoming')"
+  >
     <InboxIcon />
     <p class="mt-1">Upcoming</p>
   </ButtonSidebar>
-  <ButtonSidebar @click="handleTab('Completed')">
+  <ButtonSidebar
+    :class="{ ['opacity-100 bg-slate-600 text-white']: tab === 'Completed' }"
+    @click="handleTab('Completed')"
+  >
     <CheckboxIcon />
     <p class="mt-1">Completed</p>
   </ButtonSidebar>
@@ -21,6 +30,7 @@ export default {
   name: "Sidebar",
   props: {
     handleTab: { type: Function },
+    tab: { type: String },
   },
   components: {
     ButtonSidebar,
