@@ -1,12 +1,21 @@
 <template>
   <div
-    class="grid grid-cols-1 md:grid-cols-8 xl:grid-cols-10 max-w-screen-xl w-full mx-auto p-6 md:p-10"
+    class="grid grid-cols-1 md:grid-cols-8 xl:grid-cols-10 max-w-screen-xl w-full mx-auto px-6 pb-6 md:px-10 md:pb-10"
   >
-    <div class="flex flex-wrap md:flex-col md:col-span-2 gap-4 md:gap-6">
-      <Sidebar :handleTab="handleTab" :tab="tab" />
+    <div class="flex flex-col md:col-span-2 sticky top-0 bg-white z-20">
+      <div
+        class="flex flex-col md:col-span-2 pt-6 pb-8 md:py-0 md:mt-16 sticky top-16 bg-white z-20"
+      >
+        <Header />
+        <div
+          class="flex flex-wrap md:flex-col sm:justify-center gap-4 md:gap-6"
+        >
+          <Sidebar :handleTab="handleTab" :tab="tab" />
+        </div>
+      </div>
     </div>
     <div
-      class="flex flex-col md:col-span-6 xl:col-span-8 gap-8 pt-6 md:pt-0 md:pl-10 pr-0"
+      class="flex flex-col md:col-span-6 xl:col-span-8 gap-8 md:pt-16 md:pl-10 pr-0 relative"
     >
       <div class="flex justify-between">
         <div class="flex flex-col gap-2">
@@ -54,6 +63,7 @@ import Sidebar from "./Sidebar.vue";
 import { SearchIcon, PencilPlusIcon } from "vue-tabler-icons";
 import TodoItem from "./TodoItem.vue";
 import ModalCreate from "./ModalCreate.vue";
+import Header from "./Header.vue";
 
 export default {
   name: "Content",
@@ -63,6 +73,7 @@ export default {
     TodoItem,
     PencilPlusIcon,
     ModalCreate,
+    Header,
   },
   methods: {
     handleTab(data) {
