@@ -46,7 +46,10 @@
         </div>
       </div>
       <div v-if="lists.length" class="flex flex-col gap-5">
-        <div v-for="item in lists" :key="item.id">
+        <div v-for="item in lists" :key="item.id" v-show="!item.is_done">
+          <TodoItem :tab="tab" :data="item" @onDelete="handleAfterDelete" />
+        </div>
+        <div v-for="item in lists" :key="item.id" v-show="item.is_done">
           <TodoItem :tab="tab" :data="item" @onDelete="handleAfterDelete" />
         </div>
       </div>
