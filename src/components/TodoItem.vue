@@ -5,8 +5,9 @@
         ['item-today']: tab === 'Today',
         ['item-upcoming']: tab === 'Upcoming',
         ['item-completed']: tab === 'Completed',
+        ['opacity-40']: data?.is_done,
       }"
-      class="flex items-center justify-between p-4 rounded-xl font-bold cursor-pointer w-full"
+      class="flex items-center justify-between p-4 rounded-xl font-bold cursor-pointer w-full duration-300"
       @click="handleCheck(data)"
     >
       <div class="flex items-center gap-4">
@@ -32,6 +33,7 @@
         ['text-rose-600']: tab === 'Today',
         ['text-amber-600']: tab === 'Upcoming',
         ['text-emerald-600']: tab === 'Completed',
+        ['opacity-20']: data?.is_done,
       }"
       class="z-10 absolute right-4 cursor-pointer"
       @click="handleDelete(data)"
