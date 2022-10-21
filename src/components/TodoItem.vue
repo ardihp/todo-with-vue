@@ -59,7 +59,13 @@ export default {
     handleCheck(data) {
       const lists = JSON.parse(localStorage.getItem("lists"));
       const filteredList = lists.find((item) => item.id === data.id);
-      const dataReplace = [{ ...filteredList, is_done: !filteredList.is_done }];
+      const dataReplace = [
+        {
+          ...filteredList,
+          type: filteredList.is_done ? "Today" : "Completed",
+          is_done: !filteredList.is_done,
+        },
+      ];
       localStorage.setItem(
         "lists",
         JSON.stringify(
